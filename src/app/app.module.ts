@@ -23,6 +23,7 @@ import { GiocoComponent } from './componenti/gioco/gioco.component';
 import { ByPassSecurityPipe } from './pipes/sanitize.pipe';
 import { BooleanPipe } from './pipes/boolean.pipe';
 import { BuyComponent } from './componenti/buy/buy.component';
+import { LuhnPipe } from './pipes/luhn.pipe';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { BuyComponent } from './componenti/buy/buy.component';
     ByPassSecurityPipe,
     BooleanPipe,
     BuyComponent,
+    LuhnPipe,
   ],
   imports: [
     BrowserModule,
