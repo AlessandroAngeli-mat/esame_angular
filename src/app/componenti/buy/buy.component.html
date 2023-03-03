@@ -1,2 +1,14 @@
-<router-outlet></router-outlet>
-<input type="text" [card]="">
+<input type="text" [(ngModel)]='card' id="numeroInserito" />
+<button mat-raised-button color="primary" (click)="onPurchase()">Purchase</button>
+
+<div *ngIf="purchased">
+  <div [ngClass]="(card | luhn) ? 'right' : 'wrong'">
+  <div *ngIf="card | luhn; else wrong">
+    <p>Grazie per l'acquisto di {{price | currency: 'EUR'}}</p>
+    </div>
+  </div>
+
+<ng-template #wrong>
+  <p>INVALID CARD NUMBER</p>
+</ng-template>
+</div>

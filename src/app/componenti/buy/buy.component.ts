@@ -11,12 +11,27 @@ export class BuyComponent implements OnInit{
 
   title!: any
   @Input() card!:string
+  price!: number
+  purchased = false
 
   constructor(private route: ActivatedRoute,private firebase: FirebaseService) {}
 
   ngOnInit(): void {
     this.route.paramMap.subscribe((params: ParamMap) => {
       this.title = params.get('title')!
+      console.log(this.title)
+    })
+  }
+
+  onPurchase(){
+    this.firebase.getData(this.firebase.urlGames).subscribe((data:any) => {
+      for(let dato of data){
+        // console.log(this.title)
+        if(dato['title'] == this.title){
+          this.price = dato['price']
+          this.purchased = true
+        }
+      }
     })
   }
 
