@@ -19,10 +19,10 @@ import { HighlightDirective } from './direttive/highlight/highlight.directive';
 import { ContactComponent } from './componenti/contact/contact.component';
 import { HomeComponent } from './componenti/home/home.component';
 import { NotfoundComponent } from './componenti/notfound/notfound.component';
-import { InstallaComponent } from './componenti/installa/installa.component';
 import { GiocoComponent } from './componenti/gioco/gioco.component';
 import { ByPassSecurityPipe } from './pipes/sanitize.pipe';
 import { BooleanPipe } from './pipes/boolean.pipe';
+import { BuyComponent } from './componenti/buy/buy.component';
 
 @NgModule({
   declarations: [
@@ -31,10 +31,10 @@ import { BooleanPipe } from './pipes/boolean.pipe';
     ContactComponent,
     HomeComponent,
     NotfoundComponent,
-    InstallaComponent,
     GiocoComponent,
     ByPassSecurityPipe,
     BooleanPipe,
+    BuyComponent,
   ],
   imports: [
     BrowserModule,
