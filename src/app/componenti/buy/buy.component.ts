@@ -19,14 +19,12 @@ export class BuyComponent implements OnInit{
   ngOnInit(): void {
     this.route.paramMap.subscribe((params: ParamMap) => {
       this.title = params.get('title')!
-      console.log(this.title)
     })
   }
 
   onPurchase(){
     this.firebase.getData(this.firebase.urlGames).subscribe((data:any) => {
       for(let dato of data){
-        // console.log(this.title)
         if(dato['title'] == this.title){
           this.price = dato['price']
           this.purchased = true
