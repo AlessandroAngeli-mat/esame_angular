@@ -1,8 +1,3 @@
-<!-- <p>titolo: {{ title }}, link video:{{video['Hunt_Showdown']}}</p> -->
-<!--<video width="320" height="240" controls autoplay muted>
-  <source src="{{video['{{title}}']}}" type="video/webm" />
-  <p>Your browser does not support video tags</p>
-</video>-->
 <iframe width="640" height="360" [src]="video | byPassSecurity" frameborder="0" allowfullscreen autoplay muted></iframe>
 <div *ngFor="let review of reviews">
   <p class="user header">
