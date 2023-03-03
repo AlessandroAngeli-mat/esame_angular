@@ -1,0 +1,68 @@
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+
+.example-events {
+  width: 300px;
+  height: 200px;
+  overflow: auto;
+  border: 1px solid #555;
+}
+
+.example-container {
+  background-color: #2A475E
+}
+
+form, div, p, mat-sidenav {
+  background-color: #2A475E
+}
+
+div {
+  /* display: grid;
+  grid-template-columns: repeat(2, 50%);
+  gap: 1rem; */
+  display: flex;
+  flex-wrap: wrap;
+  align-items:normal;
+  padding-left: 5%;
+  padding-bottom: 5%;
+  padding-top: 5%;
+}
+
+.example-card {
+  max-width: 100%;
+  background-color: #507081;
+  color:white;
+}
+
+mat-card-content > p {
+  background-color: #507081;
+}
+
+header, .main-header, .search-block {
+  position: fixed;
+  top: 0;
+  z-index: 11;
+  transition: all 250ms ease-in-out;
+}
+.main-header.hidden {
+  opacity: 0;
+}
+.search-block {
+  width: 0%;
+  right: 0;
+  background: #fff;
+}
+.search-block.active {
+  width: 100%;
+}
+.search-block .search-control {
+  flex: 1;
+  font-size: 1rem;
+  border: 0;
+  outline: none;
+  padding-left: 10px;
+}

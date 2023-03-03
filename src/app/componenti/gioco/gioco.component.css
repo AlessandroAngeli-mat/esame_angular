@@ -1,0 +1,17 @@
+p {
+  color: white;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.header {
+  font-weight: bold;
+}
+
+.user {
+  color: lightgreen;
+}

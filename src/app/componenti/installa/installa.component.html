@@ -1,0 +1,23 @@
+<form [formGroup]="feedbackform" (ngSubmit)="onClick()">
+  <mat-form-field appearance="fill">
+    <mat-label>User</mat-label>
+    <input matInput type="text" name="user" formControlName="user" />
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Description</mat-label>
+    <input matInput type="textbox" name="description" formControlName="description" />
+  </mat-form-field>
+  <button
+    mat-raised-button
+    color="primary"
+    type="submit"
+    [disabled]="!feedbackform.valid"
+  >
+    Publish review
+  </button>
+</form>
+
+
+<div *ngIf="given">
+<button mat-button-primary (click)="onClick()">Install Steam 😊</button>
+</div>

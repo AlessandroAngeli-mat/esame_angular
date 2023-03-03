@@ -1,0 +1,40 @@
+<!-- <p>titolo: {{ title }}, link video:{{video['Hunt_Showdown']}}</p> -->
+<!--<video width="320" height="240" controls autoplay muted>
+  <source src="{{video['{{title}}']}}" type="video/webm" />
+  <p>Your browser does not support video tags</p>
+</video>-->
+<iframe width="640" height="360" [src]="video | byPassSecurity" frameborder="0" allowfullscreen autoplay muted></iframe>
+<div *ngFor="let review of reviews">
+  <p class="user header">
+    <img [src]="(review.like | boolean) ? urlLike : urlDislike" />{{ review.user }}
+  </p>
+  <p>{{ review.description }}</p>
+</div>
+
+<p class="header">Add your own review here!</p>
+<form [formGroup]="reviewform" (ngSubmit)="onSubmit()">
+  <mat-form-field appearance="fill">
+    <mat-label>User</mat-label>
+    <input matInput type="text" name="user" formControlName="user" />
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Description</mat-label>
+    <input matInput type="textbox" name="description" formControlName="description" />
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Like</mat-label>
+    <mat-select name="like" formControlName="like">
+      <mat-option value="true">I like it</mat-option>
+      <mat-option value="false">I don't like it</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <button
+    mat-raised-button
+    color="primary"
+    type="submit"
+    [disabled]="!reviewform.valid"
+  >
+    Publish review
+  </button>
+</form>
+<p *ngIf="submittato" class="header">Thank you for your review!</p>
