@@ -16,8 +16,6 @@ export class GiocoComponent implements OnInit{
   urlDislike = "https://store.akamai.steamstatic.com/public/shared/images/userreviews/icon_thumbsDown_v6.png"
   reviewform!: FormGroup
   submittato = false
-  percentuale!:number
-  likes!:number[]
 
   constructor(private route: ActivatedRoute,private firebase: FirebaseService) {}
 
@@ -49,7 +47,7 @@ export class GiocoComponent implements OnInit{
   onSubmit(){
     this.firebase.insertData(this.firebase.urlDb + this.title + '.json',
     {user:this.reviewform.value.user, like:this.reviewform.value.like, description:this.reviewform.value.description}).subscribe(data => {
-      console.log(data)
+
     })
 
     this.submittato = true
