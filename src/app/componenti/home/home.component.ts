@@ -11,8 +11,6 @@ export class HomeComponent implements OnInit{
   constructor(private firebase: FirebaseService) {}
 
   dati!: any
-  events: string[] = [];
-  opened!: boolean;
 
   ngOnInit(): void{
     this.firebase.getData(this.firebase.urlGames).subscribe((data:any) => {

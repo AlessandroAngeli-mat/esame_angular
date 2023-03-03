@@ -28,9 +28,7 @@ export class GiocoComponent implements OnInit{
 
     this.firebase.getReviews(this.firebase.urlDb, this.title).subscribe((data:any) => {
       this.reviews = Object.values(data)
-      console.log(this.reviews)
     })
-
 
 
     this.firebase.getData(this.firebase.urlGames).subscribe((data:any) => {
